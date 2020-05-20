@@ -9,8 +9,19 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @ObservedObject var networkingManager = NetworkingManager()
+    
     var body: some View {
-        Text("Hello, World!")
+        NavigationView{
+            List(networkingManager.dataList.features,
+                  id: \.properties){
+                     data in
+                    NavigationLink(destination: QuakeDetails(data: data)){
+                        CellRow(data: data)
+                    }
+             }.navigationBarTitle("Quakes")
+        }
     }
 }
 
