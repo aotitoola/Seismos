@@ -1,2 +1,2 @@
-# SwiftUI-List-XC11
-List View in SwiftUI
+# Seismos
+Real-time view of earthquakes around the world.
